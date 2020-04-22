@@ -39,7 +39,6 @@ namespace AMDemoClient
         static async Task SendMessageAsync()
         {
             // Setup MSAL client
-            // authClient = new Microsoft.Identity.Client.PublicClientApplication("1ffdbb0d-ba37-4cc6-9895-e71afcc5e4eb");
             var appId = configuration.GetSection("applicationId").Value;
             var tenantId = configuration.GetSection("tenantId").Value;
             var originator = configuration.GetSection("originatorId").Value;
@@ -49,7 +48,6 @@ namespace AMDemoClient
             try
             {
             // Get the access token
-            // var result = await authClient.AcquireTokenAsync(scopes);
             var result = await authClient.AcquireTokenInteractive(scopes).ExecuteAsync();
                 
                 // Initialize Graph client with delegate auth provider
