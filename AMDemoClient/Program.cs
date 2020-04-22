@@ -43,7 +43,7 @@ namespace AMDemoClient
             var tenantId = configuration.GetSection("tenantId").Value;
             var originator = configuration.GetSection("originatorId").Value;
 
-            authClient = PublicClientApplicationBuilder.Create(appId).WithTenantId(tenantId).WithDefaultRedirectUri().Build();
+            authClient = PublicClientApplicationBuilder.Create(appId).WithTenantId(tenantId).WithRedirectUri("http://localhost").Build();
 
             try
             {
